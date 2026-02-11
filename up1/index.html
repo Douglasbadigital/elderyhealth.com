@@ -1,1 +1,909 @@
+UP 1
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ETAPA 1 de 2 - Oferta Especial</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* =============================================
+           RESET E VARIÁVEIS GLOBAIS
+           ============================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Cores principais */
+            --cor-fundo: #fffaf5;
+            --cor-fundo-destaque: #fff8f0;
+            --cor-texto: #2d2a26;
+            --cor-texto-secundario: #5c5650;
+            --cor-destaque: #c9302c;
+            --cor-destaque-suave: #e85d4c;
+            --cor-dourado: #b8860b;
+            
+            /* Cores dos botões */
+            --cor-botao-sim: #28a745;
+            --cor-botao-sim-hover: #218838;
+            --cor-botao-nao: #dc3545;
+            --cor-botao-nao-hover: #c82333;
+            
+            /* Cores de alerta */
+            --cor-alerta-fundo: #fff3cd;
+            --cor-alerta-borda: #ffc107;
+            --cor-alerta-texto: #856404;
+            
+            /* Tipografia */
+            --fonte-titulo: 'Crimson Pro', Georgia, serif;
+            --fonte-corpo: 'Inter', -apple-system, sans-serif;
+            
+            /* Espaçamentos */
+            --espacamento-secao: 50px;
+            --largura-maxima: 750px;
+        }
+
+        body {
+            font-family: var(--fonte-corpo);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        /* =============================================
+           CONTAINER PRINCIPAL
+           ============================================= */
+        .container {
+            max-width: var(--largura-maxima);
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        /* =============================================
+           INICIO ALERTA TOPO
+           ============================================= */
+        .alerta-topo {
+            background: linear-gradient(135deg, var(--cor-alerta-fundo) 0%, #ffecb3 100%);
+            border: 2px solid var(--cor-alerta-borda);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .alerta-topo__etapa {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--cor-alerta-texto);
+            margin-bottom: 10px;
+        }
+
+        .alerta-topo__texto {
+            color: var(--cor-alerta-texto);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .alerta-topo__texto strong {
+            color: var(--cor-destaque);
+        }
+        /* =============================================
+           FIM ALERTA TOPO
+           ============================================= */
+
+        /* =============================================
+           INICIO HEADLINE
+           ============================================= */
+        .headline {
+            text-align: center;
+            padding-bottom: var(--espacamento-secao);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .headline__parabens {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+        }
+
+        .headline__titulo {
+            font-family: var(--fonte-titulo);
+            font-size: clamp(26px, 5vw, 38px);
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: var(--cor-texto);
+        }
+
+        .headline__titulo span {
+            color: var(--cor-destaque);
+        }
+
+        .headline__subtitulo {
+            font-size: 16px;
+            color: var(--cor-texto-secundario);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        /* =============================================
+           FIM HEADLINE
+           ============================================= */
+
+        /* =============================================
+           INICIO BLOCO TEXTO
+           ============================================= */
+        .bloco-texto {
+            padding: var(--espacamento-secao) 0;
+        }
+
+        .bloco-texto--borda {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .bloco-texto p {
+            margin-bottom: 20px;
+            color: var(--cor-texto-secundario);
+        }
+
+        .bloco-texto p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bloco-texto strong {
+            color: var(--cor-texto);
+            font-weight: 600;
+        }
+
+        .bloco-texto .destaque {
+            color: var(--cor-destaque);
+            font-weight: 600;
+        }
+
+        .bloco-texto .produto {
+            color: var(--cor-dourado);
+            font-weight: 700;
+        }
+
+        /* Texto centralizado e enfatizado */
+        .bloco-texto__enfase {
+            text-align: center;
+            font-family: var(--fonte-titulo);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--cor-texto);
+            padding: 30px 20px;
+            margin: 30px 0;
+            background: var(--cor-fundo-destaque);
+            border-radius: 10px;
+            border-left: 4px solid var(--cor-destaque);
+        }
+
+        /* Subtítulo dentro do bloco */
+        .bloco-texto__subtitulo {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--cor-texto);
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        /* Texto de alerta/urgência */
+        .bloco-texto__alerta {
+            background: linear-gradient(135deg, #ffeaea 0%, #fff5f5 100%);
+            border: 1px solid #ffcccc;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .bloco-texto__alerta p {
+            color: var(--cor-destaque);
+            font-weight: 600;
+            margin: 0;
+        }
+        /* =============================================
+           FIM BLOCO TEXTO
+           ============================================= */
+
+        /* =============================================
+           INICIO BLOCO IMAGEM
+           ============================================= */
+        .bloco-imagem {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .bloco-imagem__container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .bloco-imagem__img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Placeholder para imagens */
+        .bloco-imagem__placeholder {
+            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
+            border: 2px dashed #ccc;
+            border-radius: 12px;
+            padding: 60px 40px;
+            text-align: center;
+            color: #888;
+        }
+
+        .bloco-imagem__placeholder-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            opacity: 0.5;
+        }
+
+        .bloco-imagem__placeholder-texto {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .bloco-imagem__placeholder-instrucao {
+            font-size: 12px;
+            color: #aaa;
+            margin-top: 8px;
+        }
+        /* =============================================
+           FIM BLOCO IMAGEM
+           ============================================= */
+
+        /* =============================================
+           INICIO BLOCO PREÇO
+           ============================================= */
+        .bloco-preco {
+            text-align: center;
+            padding: var(--espacamento-secao) 0;
+            background: var(--cor-fundo-destaque);
+            border-radius: 16px;
+            margin: 40px 0;
+        }
+
+        .bloco-preco__de {
+            font-size: 16px;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 5px;
+        }
+
+        .bloco-preco__de span {
+            text-decoration: line-through;
+            color: var(--cor-destaque);
+        }
+
+        .bloco-preco__por {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 10px;
+        }
+
+        .bloco-preco__valor {
+            font-family: var(--fonte-titulo);
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--cor-botao-sim);
+        }
+
+        .bloco-preco__valor small {
+            font-size: 24px;
+            vertical-align: top;
+            position: relative;
+            top: 10px;
+        }
+
+        .bloco-preco__aviso {
+            font-size: 14px;
+            color: var(--cor-destaque);
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        /* =============================================
+           FIM BLOCO PREÇO
+           ============================================= */
+
+        /* =============================================
+           INICIO BLOCO BÔNUS
+           ============================================= */
+        .bloco-bonus {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            border: 2px solid #81c784;
+            border-radius: 16px;
+            padding: 35px 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .bloco-bonus__badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .bloco-bonus__titulo {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--cor-texto);
+            margin-bottom: 15px;
+        }
+
+        .bloco-bonus__valor {
+            font-size: 15px;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 15px;
+        }
+
+        .bloco-bonus__valor span {
+            text-decoration: line-through;
+            color: var(--cor-destaque);
+        }
+
+        .bloco-bonus__gratis {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--cor-botao-sim);
+        }
+
+        .bloco-bonus__descricao {
+            font-size: 15px;
+            color: var(--cor-texto-secundario);
+            margin-top: 15px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        /* =============================================
+           FIM BLOCO BÔNUS
+           ============================================= */
+
+        /* =============================================
+           INICIO BLOCO GARANTIA
+           ============================================= */
+        .bloco-garantia {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 40px 0;
+        }
+
+        .bloco-garantia__icone {
+            font-size: 50px;
+            flex-shrink: 0;
+        }
+
+        .bloco-garantia__texto {
+            font-size: 15px;
+            color: var(--cor-texto-secundario);
+        }
+
+        .bloco-garantia__texto strong {
+            color: var(--cor-texto);
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .bloco-garantia {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        /* =============================================
+           FIM BLOCO GARANTIA
+           ============================================= */
+
+        /* =============================================
+           INICIO BLOCO CTA (CALL TO ACTION)
+           ============================================= */
+        .bloco-cta {
+            padding: var(--espacamento-secao) 0;
+            text-align: center;
+        }
+
+        .bloco-cta__titulo {
+            font-family: var(--fonte-titulo);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--cor-texto);
+        }
+
+        .bloco-cta__subtitulo {
+            color: var(--cor-texto-secundario);
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        .bloco-cta__botoes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* Botão principal verde - SIM, ADICIONAR AO PACOTE */
+        .botao-sim {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--cor-botao-sim) 0%, #20c997 100%);
+            color: white;
+            font-family: var(--fonte-corpo);
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 22px 50px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .botao-sim:hover {
+            background: linear-gradient(135deg, var(--cor-botao-sim-hover) 0%, #1aa179 100%);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+        }
+
+        .botao-sim:active {
+            transform: translateY(0);
+        }
+
+        /* Botão secundário vermelho - NÃO, IGNORAR */
+        .botao-nao {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--cor-botao-nao);
+            font-family: var(--fonte-corpo);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            opacity: 0.8;
+        }
+
+        .botao-nao:hover {
+            background-color: var(--cor-botao-nao);
+            color: white;
+            opacity: 1;
+        }
+        /* =============================================
+           FIM BLOCO CTA (CALL TO ACTION)
+           ============================================= */
+
+        /* =============================================
+           UTILITÁRIOS E RESPONSIVIDADE
+           ============================================= */
+        .texto-centro {
+            text-align: center;
+        }
+
+        .margem-topo {
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --espacamento-secao: 35px;
+            }
+
+            body {
+                font-size: 16px;
+            }
+
+            .bloco-preco__valor {
+                font-size: 46px;
+            }
+
+            .botao-sim {
+                font-size: 16px;
+                padding: 20px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- =============================================
+             INICIO ALERTA TOPO
+             ============================================= -->
+        <div class="alerta-topo">
+            <p class="alerta-topo__etapa">ETAPA 1 de 2</p>
+            <p class="alerta-topo__texto">
+                <strong>Atenção:</strong> não feche ou atualize essa página, isso pode gerar erros na sua compra.
+            </p>
+        </div>
+        <!-- =============================================
+             FIM ALERTA TOPO
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO HEADLINE
+             ============================================= -->
+        <header class="headline">
+            <span class="headline__parabens">🎉 Parabéns!</span>
+            <h1 class="headline__titulo">
+                Você conseguiu uma vaga no <span>"Nome do Produto"</span>
+            </h1>
+            <p class="headline__subtitulo">
+                Por favor não feche ou atualize esta página pois isso pode causar alguns erros na sua compra!
+            </p>
+        </header>
+        <!-- =============================================
+             FIM HEADLINE
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO BLOCO TEXTO - CONFIRMAÇÃO
+             ============================================= -->
+        <section class="bloco-texto bloco-texto--borda">
+            <p>
+                Você irá receber o acesso no seu e-mail, lembre-se de verificar a <strong>lixeira</strong> e a <strong>caixa de spam</strong>...
+            </p>
+            <p>
+                Caso tenha alguma dúvida, envie-nos um e-mail e responderemos dentro das primeiras 24 horas...
+            </p>
+            <p>
+                Se você está lendo essa mensagem, significa que <strong>você tomou a decisão certa</strong>...
+            </p>
+            <p>
+                Você comprou o <span class="produto">"Nome do Produto"</span> porque quer perder peso...
+            </p>
+            <p>
+                E é exatamente isso que ele fará por você...
+            </p>
+            <p>
+                Você vai aprender uma <strong>rotina matinal nada convencional</strong>, que vai queimar toda a gordura do seu corpo enquanto revitaliza sua energia e autoestima de forma super rápida...
+            </p>
+
+            <div class="bloco-texto__enfase">
+                Quero ouvir o seu testemunho e quanto peso você perdeu, então tente aplicar exatamente o que está dentro do <span class="produto">"Nome do Produto"</span>...
+            </div>
+
+            <p class="texto-centro">
+                Se funcionou para outras pessoas...<br>
+                <strong>Com certeza vai funcionar pra você também!</strong>
+            </p>
+        </section>
+        <!-- =============================================
+             FIM BLOCO TEXTO - CONFIRMAÇÃO
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO BLOCO TEXTO - PROBLEMA (FLACIDEZ)
+             ============================================= -->
+        <section class="bloco-texto bloco-texto--borda">
+            <p>
+                Tudo depende da sua dedicação aqui, nesta página, eu gostaria de te oferecer algo de ainda mais valioso, vou te revelar uma coisa que você provavelmente já sabe...
+            </p>
+
+            <div class="bloco-texto__alerta">
+                <p>Depois de perder peso, seu corpo ficará extremamente flácido…</p>
+            </div>
+
+            <!-- =============================================
+                 INICIO BLOCO IMAGEM - PLACEHOLDER 1
+                 ============================================= -->
+            <div class="bloco-imagem">
+                <div class="bloco-imagem__placeholder">
+                    <div class="bloco-imagem__placeholder-icon">🖼️</div>
+                    <p class="bloco-imagem__placeholder-texto">IMAGEM 1 - Exemplo de flacidez</p>
+                    <p class="bloco-imagem__placeholder-instrucao">Substitua pelo src da sua imagem</p>
+                </div>
+                <!-- 
+                PARA ADICIONAR SUA IMAGEM, SUBSTITUA O BLOCO ACIMA POR:
+                <div class="bloco-imagem__container">
+                    <img src="SUA-IMAGEM-AQUI.jpg" alt="Descrição da imagem" class="bloco-imagem__img">
+                </div>
+                -->
+            </div>
+            <!-- =============================================
+                 FIM BLOCO IMAGEM - PLACEHOLDER 1
+                 ============================================= -->
+
+            <p>
+                A flacidez é normal após a perda de muitos quilos, pois a gordura do seu corpo estica a sua pele, e conforme você perde a gordura a sua pele começa a murchar e ficar com uma <span class="destaque">textura de casca de laranja horrível</span>...
+            </p>
+            <p>
+                Isso ocorre porque, ao retirar o excesso de gordura, as fibras elásticas que sustentam a pele perdem a capacidade de retração...
+            </p>
+
+            <!-- =============================================
+                 INICIO BLOCO IMAGEM - PLACEHOLDER 2
+                 ============================================= -->
+            <div class="bloco-imagem">
+                <div class="bloco-imagem__placeholder">
+                    <div class="bloco-imagem__placeholder-icon">🖼️</div>
+                    <p class="bloco-imagem__placeholder-texto">IMAGEM 2 - Áreas afetadas pela flacidez</p>
+                    <p class="bloco-imagem__placeholder-instrucao">Substitua pelo src da sua imagem</p>
+                </div>
+            </div>
+            <!-- =============================================
+                 FIM BLOCO IMAGEM - PLACEHOLDER 2
+                 ============================================= -->
+
+            <p>
+                Todo o corpo pode sofrer com a flacidez após a perda de peso, mas algumas áreas são mais afetadas, principalmente os <strong>braços, coxas, nádegas, abdômen e o rosto</strong>, o que pode dar a algumas pessoas uma aparência envelhecida...
+            </p>
+            <p>
+                <span class="destaque">Infelizmente, isso acaba destruindo completamente a autoestima e a vontade de viver...</span>
+            </p>
+
+            <!-- =============================================
+                 INICIO BLOCO IMAGEM - PLACEHOLDER 3
+                 ============================================= -->
+            <div class="bloco-imagem">
+                <div class="bloco-imagem__placeholder">
+                    <div class="bloco-imagem__placeholder-icon">🖼️</div>
+                    <p class="bloco-imagem__placeholder-texto">IMAGEM 3 - Impacto na autoestima</p>
+                    <p class="bloco-imagem__placeholder-instrucao">Substitua pelo src da sua imagem</p>
+                </div>
+            </div>
+            <!-- =============================================
+                 FIM BLOCO IMAGEM - PLACEHOLDER 3
+                 ============================================= -->
+
+            <p>
+                Percebi isso porque todos os nossos alunos acabaram tendo a mesma coisa e me enviaram e-mails contando essas histórias...
+            </p>
+            <p>
+                Depois de perder todos aqueles quilos de gordura usando o <span class="produto">"Nome do Produto"</span>, eles ainda tinham baixa autoestima devido à <strong>flacidez exagerada</strong> causada pela rápida perda de peso...
+            </p>
+        </section>
+        <!-- =============================================
+             FIM BLOCO TEXTO - PROBLEMA (FLACIDEZ)
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO BLOCO TEXTO - SOLUÇÃO
+             ============================================= -->
+        <section class="bloco-texto bloco-texto--borda">
+            <p>
+                Embora a flacidez não seja considerada uma condição médica que precise ser tratada, muitas mulheres se sentem <strong>extremamente constrangidas</strong> com isso...
+            </p>
+            <p>
+                Muitos de nossos alunos queriam aumentar ainda mais seus resultados...
+            </p>
+            <p>
+                E além de perder peso de forma saudável e rápida, eles tentaram se preparar contra aquele pequeno problema que ocorre depois de perder vários quilos...
+            </p>
+            <p>
+                Por isso, surgiu a necessidade de um <strong>programa de bem-estar contra a flacidez</strong>...
+            </p>
+            <p>
+                Felizmente, depois de muito estudo, descobrimos uma <span class="destaque">solução simples que elimina a flacidez da pele</span>...
+            </p>
+            <p>
+                O melhor de tudo, é que você <strong>não precisa fazer tratamentos perigosos</strong> ou usar cremes caros que nem sempre têm o efeito desejado...
+            </p>
+
+            <h3 class="bloco-texto__subtitulo margem-topo">
+                O Método Contra a Flacidez
+            </h3>
+
+            <p>
+                Este programa irá ajudá-lo a <strong>eliminar totalmente a flacidez do seu corpo</strong>, pois ajudará após a perda de peso, dando-lhe a confiança para usar as roupas que deseja sem se preocupar com nada e ao mesmo tempo você perderá peso com o <span class="produto">"Nome do Produto"</span>...
+            </p>
+            <p>
+                Você também vai conseguir uma <strong>pele sem aquela flacidez horrível</strong> com aparência de casca de laranja após a perda de peso...
+            </p>
+
+            <div class="bloco-texto__enfase">
+                Já imaginou ter um corpo totalmente saudável? Poder usar qualquer tipo de roupa, principalmente as curtas, sem ter vergonha do próprio corpo...
+            </div>
+
+            <p class="texto-centro">
+                Já imaginou ir à praia sob aquele sol escaldante e usando o melhor biquíni que você tem? <strong>Isso está mais perto do que você pensa...</strong>
+            </p>
+
+            <!-- =============================================
+                 INICIO BLOCO IMAGEM - PLACEHOLDER 4
+                 ============================================= -->
+            <div class="bloco-imagem">
+                <div class="bloco-imagem__placeholder">
+                    <div class="bloco-imagem__placeholder-icon">🖼️</div>
+                    <p class="bloco-imagem__placeholder-texto">IMAGEM 4 - Exemplo do que você NÃO quer</p>
+                    <p class="bloco-imagem__placeholder-instrucao">Substitua pelo src da sua imagem</p>
+                </div>
+            </div>
+            <!-- =============================================
+                 FIM BLOCO IMAGEM - PLACEHOLDER 4
+                 ============================================= -->
+
+            <p>
+                <strong>Eu não quero que você fique assim depois de perder peso...</strong>
+            </p>
+            <p>
+                Quero que você fique linda e se sinta bem consigo mesma. Depois que nossos alunos usaram esse programa, conseguiram <span class="destaque">perder a flacidez em menos de 30 dias</span>. Isso foi algo que realmente nos surpreendeu...
+            </p>
+            <p>
+                Não esperávamos que nosso programa tivesse esse efeito porque, afinal, não se trata de usar cremes caros ou fazer tratamentos perigosos que têm mais efeitos colaterais do que benefícios...
+            </p>
+
+            <div class="bloco-texto__enfase">
+                É um método rápido, seguro e 100% natural...<br>
+                Ele não coloca sua pele ou saúde em risco.
+            </div>
+        </section>
+        <!-- =============================================
+             FIM BLOCO TEXTO - SOLUÇÃO
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO BLOCO PREÇO
+             ============================================= -->
+        <section class="bloco-preco">
+            <p class="bloco-preco__de">
+                Mesmo este programa valendo mais de <span>R$ 497,00</span>
+            </p>
+            <p class="bloco-preco__de">
+                Você não vai pagar nem <span>R$ 297,00</span>
+            </p>
+            <p class="bloco-preco__por">Somente nesta página, por apenas:</p>
+            <p class="bloco-preco__valor">
+                <small>R$</small> 197<small>,00</small>
+            </p>
+            <p class="bloco-preco__aviso">
+                ⚠️ Isso só é válido AGORA. Depois, o preço volta para R$ 497,00
+            </p>
+        </section>
+        <!-- =============================================
+             FIM BLOCO PREÇO
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO BLOCO TEXTO - URGÊNCIA
+             ============================================= -->
+        <section class="bloco-texto">
+            <p>
+                E eu sei que você acha que talvez não precise disso agora, mas no futuro eu <strong>garanto que você vai</strong>...
+            </p>
+            <p>
+                Quando sua pele estiver extremamente flácida com um aspecto de maracujá, sentindo vergonha do seu corpo magro mas totalmente flácido você irá se arrepender de não ter aproveitado essa oportunidade de comprar por <strong>R$ 197,00</strong> e só vai conseguir por mais de R$ 497,00 se conseguir encontrar na internet...
+            </p>
+        </section>
+        <!-- =============================================
+             FIM BLOCO TEXTO - URGÊNCIA
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO BLOCO BÔNUS
+             ============================================= -->
+        <div class="bloco-bonus">
+            <span class="bloco-bonus__badge">🎁 Bônus Exclusivo</span>
+            <h3 class="bloco-bonus__titulo">Adeus Celulite em 21 Dias</h3>
+            <p class="bloco-bonus__valor">
+                Valor normal: <span>R$ 297,00</span>
+            </p>
+            <p class="bloco-bonus__gratis">GRÁTIS se você agir agora!</p>
+            <p class="bloco-bonus__descricao">
+                Com certeza você deve ter alguma celulite no bumbum, na barriga e nas coxas e isso te incomoda... Felizmente, este programa adicional resolverá esse problema!
+            </p>
+        </div>
+        <!-- =============================================
+             FIM BLOCO BÔNUS
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO BLOCO GARANTIA
+             ============================================= -->
+        <div class="bloco-garantia">
+            <div class="bloco-garantia__icone">🛡️</div>
+            <div class="bloco-garantia__texto">
+                <strong>Garantia incondicional de 30 dias:</strong> Se você não gostar deste programa, sugiro até que peça um reembolso porque eu não mereço seu dinheiro. Estou fazendo isso porque estou comprometido com sua transformação, então não me importo de correr todos os riscos.
+            </div>
+        </div>
+        <!-- =============================================
+             FIM BLOCO GARANTIA
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO BLOCO TEXTO - ESCASSEZ FINAL
+             ============================================= -->
+        <section class="bloco-texto">
+            <div class="bloco-texto__alerta">
+                <p>Assim que você sair desta página, esta oportunidade se foi para sempre...</p>
+            </div>
+            <p class="texto-centro">
+                Você não encontrará este material em nenhum outro lugar com esta oportunidade, isso só está disponível para mulheres que mostram que são <strong>realmente determinadas</strong>...
+            </p>
+            <p class="texto-centro">
+                Veja bem, você já tem acesso ao <span class="produto">"Nome do Produto"</span> e depois de perder peso, infelizmente sua pele vai cair horrivelmente, o que é algo que eu definitivamente sei que <strong>não é algo que você deseja</strong>...
+            </p>
+        </section>
+        <!-- =============================================
+             FIM BLOCO TEXTO - ESCASSEZ FINAL
+             ============================================= -->
+
+
+        <!-- =============================================
+             INICIO BLOCO CTA (CALL TO ACTION)
+             ============================================= -->
+        <section class="bloco-cta">
+            <h2 class="bloco-cta__titulo">Clique no botão abaixo e comece agora mesmo!</h2>
+            <p class="bloco-cta__subtitulo">
+                Aguardo o outro lado e espero ouvir o seu testemunho…
+            </p>
+            
+            <div class="bloco-cta__botoes">
+                <!-- Botão principal verde - SIM, ADICIONAR AO PACOTE -->
+                <a href="#" class="botao-sim">
+                    ✅ Sim, Adicionar ao Pacote!
+                </a>
+                
+                <!-- Botão secundário vermelho - NÃO, IGNORAR -->
+                <a href="#" class="botao-nao">
+                    Não, ignorar benefícios…
+                </a>
+            </div>
+        </section>
+        <!-- =============================================
+             FIM BLOCO CTA (CALL TO ACTION)
+             ============================================= -->
+
+    </div>
+
+</body>
+</html>
+
 
