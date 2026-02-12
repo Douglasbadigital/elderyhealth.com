@@ -1,1 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEP 2 of 2 - Special Offer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        :root {
+            --cor-fundo: #fffaf5;
+            --cor-fundo-destaque: #fff8f0;
+            --cor-texto: #2d2a26;
+            --cor-texto-secundario: #5c5650;
+            --cor-destaque: #c9302c;
+            --cor-destaque-suave: #e85d4c;
+            --cor-dourado: #b8860b;
+            --cor-botao-sim: #28a745;
+            --cor-botao-sim-hover: #218838;
+            --cor-botao-nao: #dc3545;
+            --cor-botao-nao-hover: #c82333;
+            --cor-alerta-fundo: #fff3cd;
+            --cor-alerta-borda: #ffc107;
+            --cor-alerta-texto: #856404;
+            --fonte-titulo: 'Crimson Pro', Georgia, serif;
+            --fonte-corpo: 'Inter', -apple-system, sans-serif;
+            --espacamento-secao: 50px;
+            --largura-maxima: 750px;
+        }
+
+        body {
+            font-family: var(--fonte-corpo);
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.8;
+            font-size: 17px;
+        }
+
+        .container {
+            max-width: var(--largura-maxima);
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        .alerta-topo {
+            background: linear-gradient(135deg, var(--cor-alerta-fundo) 0%, #ffecb3 100%);
+            border: 2px solid var(--cor-alerta-borda);
+            border-radius: 10px;
+            padding: 20px 25px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .alerta-topo__etapa {
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--cor-alerta-texto);
+            margin-bottom: 10px;
+        }
+
+        .alerta-topo__texto {
+            color: var(--cor-alerta-texto);
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .alerta-topo__texto strong {
+            color: var(--cor-destaque);
+        }
+
+        .headline {
+            text-align: center;
+            padding-bottom: var(--espacamento-secao);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .headline__parabens {
+            display: inline-block;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 25px;
+        }
+
+        .headline__titulo {
+            font-family: var(--fonte-titulo);
+            font-size: clamp(26px, 5vw, 38px);
+            font-weight: 800;
+            line-height: 1.3;
+            margin-bottom: 20px;
+            color: var(--cor-texto);
+        }
+
+        .headline__titulo span {
+            color: var(--cor-destaque);
+        }
+
+        .headline__subtitulo {
+            font-size: 16px;
+            color: var(--cor-texto-secundario);
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .bloco-texto {
+            padding: var(--espacamento-secao) 0;
+        }
+
+        .bloco-texto--borda {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .bloco-texto p {
+            margin-bottom: 20px;
+            color: var(--cor-texto-secundario);
+        }
+
+        .bloco-texto p:last-child {
+            margin-bottom: 0;
+        }
+
+        .bloco-texto strong {
+            color: var(--cor-texto);
+            font-weight: 600;
+        }
+
+        .bloco-texto .destaque {
+            color: var(--cor-destaque);
+            font-weight: 600;
+        }
+
+        .bloco-texto .produto {
+            color: var(--cor-dourado);
+            font-weight: 700;
+        }
+
+        .bloco-texto__enfase {
+            text-align: center;
+            font-family: var(--fonte-titulo);
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--cor-texto);
+            padding: 30px 20px;
+            margin: 30px 0;
+            background: var(--cor-fundo-destaque);
+            border-radius: 10px;
+            border-left: 4px solid var(--cor-destaque);
+        }
+
+        .bloco-texto__subtitulo {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--cor-texto);
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .bloco-texto__alerta {
+            background: linear-gradient(135deg, #ffeaea 0%, #fff5f5 100%);
+            border: 1px solid #ffcccc;
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin: 25px 0;
+            text-align: center;
+        }
+
+        .bloco-texto__alerta p {
+            color: var(--cor-destaque);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .bloco-texto__lista {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .bloco-texto__lista li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: var(--cor-texto-secundario);
+        }
+
+        .bloco-texto__lista li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+
+        .bloco-imagem {
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .bloco-imagem__container {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            max-width: 100%;
+        }
+
+        .bloco-imagem__img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* =============================================
+           BLOCO PREÇO - DESTACADO
+           ============================================= */
+        .bloco-preco {
+            text-align: center;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #1a5d1a 0%, #28a745 50%, #1a5d1a 100%);
+            border-radius: 20px;
+            margin: 50px 0;
+            box-shadow: 0 15px 50px rgba(40, 167, 69, 0.4), 0 0 0 5px rgba(40, 167, 69, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bloco-preco::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .bloco-preco__badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .bloco-preco__de {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 8px;
+        }
+
+        .bloco-preco__de span {
+            text-decoration: line-through;
+            color: #ffcccc;
+            font-weight: 600;
+        }
+
+        .bloco-preco__por {
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+            margin-top: 20px;
+        }
+
+        .bloco-preco__valor {
+            font-family: var(--fonte-titulo);
+            font-size: 80px;
+            font-weight: 800;
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            line-height: 1;
+        }
+
+        .bloco-preco__valor small {
+            font-size: 36px;
+            vertical-align: top;
+            position: relative;
+            top: 15px;
+        }
+
+        .bloco-preco__aviso {
+            font-size: 16px;
+            color: #ffeb3b;
+            font-weight: 700;
+            margin-top: 20px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .bloco-preco__parcelamento {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-top: 15px;
+            font-weight: 500;
+        }
+
+        @media (max-width: 600px) {
+            .bloco-preco__valor {
+                font-size: 60px;
+            }
+            .bloco-preco__valor small {
+                font-size: 28px;
+                top: 10px;
+            }
+        }
+        /* =============================================
+           FIM BLOCO PREÇO
+           ============================================= */
+
+        .bloco-bonus {
+            background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+            border: 2px solid #81c784;
+            border-radius: 16px;
+            padding: 35px 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .bloco-bonus__badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+        }
+
+        .bloco-bonus__titulo {
+            font-family: var(--fonte-titulo);
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--cor-texto);
+            margin-bottom: 15px;
+        }
+
+        .bloco-bonus__valor {
+            font-size: 15px;
+            color: var(--cor-texto-secundario);
+            margin-bottom: 15px;
+        }
+
+        .bloco-bonus__valor span {
+            text-decoration: line-through;
+            color: var(--cor-destaque);
+        }
+
+        .bloco-bonus__gratis {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--cor-botao-sim);
+        }
+
+        .bloco-bonus__descricao {
+            font-size: 15px;
+            color: var(--cor-texto-secundario);
+            margin-top: 15px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .bloco-garantia {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px 30px;
+            margin: 40px 0;
+        }
+
+        .bloco-garantia__icone {
+            font-size: 50px;
+            flex-shrink: 0;
+        }
+
+        .bloco-garantia__texto {
+            font-size: 15px;
+            color: var(--cor-texto-secundario);
+        }
+
+        .bloco-garantia__texto strong {
+            color: var(--cor-texto);
+            font-weight: 700;
+        }
+
+        @media (max-width: 600px) {
+            .bloco-garantia {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .bloco-cta {
+            padding: var(--espacamento-secao) 0;
+            text-align: center;
+        }
+
+        .bloco-cta__titulo {
+            font-family: var(--fonte-titulo);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--cor-texto);
+        }
+
+        .bloco-cta__subtitulo {
+            color: var(--cor-texto-secundario);
+            margin-bottom: 35px;
+            font-size: 16px;
+        }
+
+        .texto-centro {
+            text-align: center;
+        }
+
+        .margem-topo {
+            margin-top: 30px;
+        }
+
+        .comparacao {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .comparacao__item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .comparacao__item--destaque {
+            border: 2px solid var(--cor-botao-sim);
+            background: linear-gradient(135deg, #e8f5e9 0%, #fff 100%);
+        }
+
+        .comparacao__nome {
+            font-weight: 700;
+            color: var(--cor-texto);
+            margin-bottom: 10px;
+        }
+
+        .comparacao__resultado {
+            font-size: 14px;
+            color: var(--cor-texto-secundario);
+        }
+
+        .comparacao__resultado strong {
+            color: var(--cor-botao-sim);
+            font-size: 16px;
+        }
+
+        .comparacao__imagem {
+            margin-top: 15px;
+        }
+
+        .comparacao__imagem img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .comparacao {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --espacamento-secao: 35px;
+            }
+
+            body {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <!-- INICIO ALERTA TOPO -->
+        <div class="alerta-topo">
+            <p class="alerta-topo__etapa">STEP 1 of 2</p>
+            <p class="alerta-topo__texto">
+                <strong>Attention:</strong> do not close or refresh this page, as it may cause errors in your purchase.
+            </p>
+        </div>
+        <!-- FIM ALERTA TOPO -->
+
+        <!-- INICIO HEADLINE -->
+        <header class="headline">
+            <span class="headline__parabens">Wait!</span>
+            <h1 class="headline__titulo">
+                Don't close this page <span>yet...</span>
+            </h1>
+            <p class="headline__subtitulo">
+                I have a special offer that you absolutely need to see!
+            </p>
+        </header>
+        <!-- FIM HEADLINE -->
+
+        <!-- INICIO BLOCO TEXTO - ENTENDIMENTO -->
+        <section class="bloco-texto bloco-texto--borda">
+            <p class="texto-centro">
+                <strong>I understand!</strong>
+            </p>
+            <p class="texto-centro">
+                I see that you thought $97 was too high, right?
+            </p>
+            <p>
+                With your permission, I'm excited to offer you something of even greater value now, because I genuinely want you to achieve the results you deserve!
+            </p>
+            <p>
+                Therefore, I'm about to make this <strong>the simplest decision you've ever made in your entire life</strong>...
+            </p>
+            <p class="texto-centro">
+                To the point where you'll <span class="destaque">deeply regret it</span> if you let this opportunity slip away...
+            </p>
+        </section>
+        <!-- FIM BLOCO TEXTO - ENTENDIMENTO -->
+
+        <!-- INICIO BLOCO TEXTO - EXPLICAÇÃO -->
+        <section class="bloco-texto bloco-texto--borda">
+            <p class="texto-centro">
+                <strong>And how will I do this? Let me explain...</strong>
+            </p>
+            <div class="bloco-texto__enfase">
+                Prepare yourself for something surprising...
+            </div>
+            <p>
+                I'm going to <strong>DRASTICALLY REDUCE</strong> the price of the <span class="produto">Asian Metabolism Amplifier</span> to an absurdly low amount...
+            </p>
+            <div class="bloco-texto__alerta">
+                <p>But attention, this unique offer is available ONLY NOW...</p>
+            </div>
+            <p class="texto-centro">
+                You must be wondering: <strong>why am I doing this?</strong>
+            </p>
+        </section>
+        <!-- FIM BLOCO TEXTO - EXPLICAÇÃO -->
+
+        <!-- INICIO BLOCO TEXTO - MOTIVAÇÃO -->
+        <section class="bloco-texto bloco-texto--borda">
+            <p>
+                Simply because I don't want price to be an obstacle for you to achieve the spectacular body you deserve...
+            </p>
+            <p>
+                I don't want this opportunity to slip away forever...
+            </p>
+            <p>
+                Besides, I believe wholeheartedly that by providing you with so much value, you'll be <strong>immensely grateful</strong> for actually using these methods and transforming your life once and for all!
+            </p>
+            <div class="bloco-texto__enfase">
+                My goal is to help women like you transform their lives permanently, wherever they are...
+            </div>
+            <p class="texto-centro">
+                Now is your chance to acquire the <span class="produto">Asian Metabolism Amplifier</span> with a special discount...
+            </p>
+        </section>
+        <!-- FIM BLOCO TEXTO - MOTIVAÇÃO -->
+
+        <!-- INICIO BLOCO PREÇO - DESTACADO -->
+        <section class="bloco-preco">
+            <span class="bloco-preco__badge">🔥 Special Discount</span>
+            <p class="bloco-preco__de">
+                From <span>$97</span>
+            </p>
+            <p class="bloco-preco__por">To just:</p>
+            <p class="bloco-preco__valor">
+                <small>$</small>7
+                <p class="bloco-preco__aviso">
+                ⚡ Don't miss this unique transformation opportunity!
+            </p>
+        </section>
+        <!-- FIM BLOCO PREÇO -->
+
+        <!-- INICIO BLOCO TEXTO - O QUE RECEBE -->
+        <section class="bloco-texto bloco-texto--borda">
+            <h3 class="bloco-texto__subtitulo texto-centro">
+                With this, you'll still get:
+            </h3>
+            <ul class="bloco-texto__lista">
+                <li><strong>Morning Metabolic Accelerator Tea</strong></li>
+                <li><strong>Optimized Timing Protocol</strong></li>
+                <li><strong>7 Turbocharger Foods</strong></li>
+                <li><strong>Asian Breathing Technique</strong></li>
+                <li><strong>45-Day Intensive Schedule</strong></li>
+                <li><strong>BONUS: Emergency 3-Day Flush</strong></li>
+            </ul>
+            <div class="bloco-texto__enfase">
+                All for less than half the original price!
+            </div>
+        </section>
+        <!-- FIM BLOCO TEXTO - O QUE RECEBE -->
+
+        <!-- INICIO BLOCO TEXTO - ÚLTIMA CHANCE -->
+        <section class="bloco-texto">
+            <div class="bloco-texto__alerta">
+                <p>This is your last chance to get TWICE THE RESULTS in HALF THE TIME.</p>
+            </div>
+            <p class="texto-centro">
+                Don't let this opportunity pass you by...
+            </p>
+            <p class="texto-centro">
+                You deserve to have your <strong>dream body</strong> as quickly as possible!
+            </p>
+        </section>
+        <!-- FIM BLOCO TEXTO - ÚLTIMA CHANCE -->
+
+        <!-- INICIO BLOCO CTA (CALL TO ACTION) -->
+        <section class="bloco-cta">
+            <h2 class="bloco-cta__titulo">Are you ready to transform?</h2>
+            <p class="bloco-cta__subtitulo">
+                Click the button below and secure your special discount now!
+            </p>
+            
+            <!-- INICIO BOTÕES KIWIFY -->
+            <div style="text-align:center" id="kiwify-upsell-fUXGkjC" data-upsell-url="https://elderyhealth.com/up2" data-downsell-url="https://elderyhealth.com/dow1">
+                <button id="kiwify-upsell-trigger-fUXGkjC" style="background-color:#27AF60;padding:12px 16px;cursor:pointer;color:#FFFFFF;font-weight:600;border-radius:4px;border:1px solid #27AF60;font-size:20px;">YES, ADD TO MY PACKAGE!</button>
+                <div id="kiwify-upsell-cancel-trigger-fUXGkjC" style="margin-top:1rem;cursor:pointer;font-size:16px;text-decoration:underline;font-family:sans-serif;">No, I'll take the slower path...</div>
+            </div>
+            <script src="https://snippets.kiwify.com/upsell/upsell.min.js"></script>
+            <!-- FIM BOTÕES KIWIFY -->
+
+        </section>
+        <!-- FIM BLOCO CTA (CALL TO ACTION) -->
+
+    </div>
+</body>
+</html>
