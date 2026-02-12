@@ -224,53 +224,107 @@
             display: block;
         }
 
+        /* =============================================
+           BLOCO PREÇO - DESTACADO
+           ============================================= */
         .bloco-preco {
             text-align: center;
-            padding: var(--espacamento-secao) 0;
-            background: var(--cor-fundo-destaque);
-            border-radius: 16px;
-            margin: 40px 0;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #1a5d1a 0%, #28a745 50%, #1a5d1a 100%);
+            border-radius: 20px;
+            margin: 50px 0;
+            box-shadow: 0 15px 50px rgba(40, 167, 69, 0.4), 0 0 0 5px rgba(40, 167, 69, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bloco-preco::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .bloco-preco__badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+            color: white;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
         }
 
         .bloco-preco__de {
-            font-size: 16px;
-            color: var(--cor-texto-secundario);
-            margin-bottom: 5px;
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 8px;
         }
 
         .bloco-preco__de span {
             text-decoration: line-through;
-            color: var(--cor-destaque);
+            color: #ffcccc;
+            font-weight: 600;
         }
 
         .bloco-preco__por {
-            font-size: 14px;
+            font-size: 16px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--cor-texto-secundario);
-            margin-bottom: 10px;
+            letter-spacing: 3px;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 15px;
+            margin-top: 20px;
         }
 
         .bloco-preco__valor {
             font-family: var(--fonte-titulo);
-            font-size: 56px;
+            font-size: 80px;
             font-weight: 800;
-            color: var(--cor-botao-sim);
+            color: #ffffff;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            line-height: 1;
         }
 
         .bloco-preco__valor small {
-            font-size: 24px;
+            font-size: 36px;
             vertical-align: top;
             position: relative;
-            top: 10px;
+            top: 15px;
         }
 
         .bloco-preco__aviso {
-            font-size: 14px;
-            color: var(--cor-destaque);
-            font-weight: 600;
-            margin-top: 15px;
+            font-size: 16px;
+            color: #ffeb3b;
+            font-weight: 700;
+            margin-top: 20px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
         }
+
+        @media (max-width: 600px) {
+            .bloco-preco__valor {
+                font-size: 60px;
+            }
+            .bloco-preco__valor small {
+                font-size: 28px;
+                top: 10px;
+            }
+        }
+        /* =============================================
+           FIM BLOCO PREÇO
+           ============================================= */
 
         .bloco-bonus {
             background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
@@ -447,10 +501,6 @@
             body {
                 font-size: 16px;
             }
-
-            .bloco-preco__valor {
-                font-size: 46px;
-            }
         }
     </style>
 </head>
@@ -625,8 +675,9 @@
         </section>
         <!-- FIM BLOCO COMPARAÇÃO -->
 
-        <!-- INICIO BLOCO PREÇO -->
+        <!-- INICIO BLOCO PREÇO - DESTACADO -->
         <section class="bloco-preco">
+            <span class="bloco-preco__badge">🔥 Special Offer</span>
             <p class="bloco-preco__de">
                 Normally I charge <span>$497</span> for this advanced protocol
             </p>
@@ -635,7 +686,7 @@
                 <small>$</small>17
             </p>
             <p class="bloco-preco__aviso">
-                That's a 96% discount... but ONLY if you act now!
+                ⚡ That's a 96% discount... but ONLY if you act now!
             </p>
         </section>
         <!-- FIM BLOCO PREÇO -->
