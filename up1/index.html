@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETAPA 1 de 2 - Oferta Especial</title>
+    <title>STEP 1 of 2 - Special Offer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -185,6 +185,25 @@
             margin: 0;
         }
 
+        .bloco-texto__lista {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .bloco-texto__lista li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            color: var(--cor-texto-secundario);
+        }
+
+        .bloco-texto__lista li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            font-size: 16px;
+        }
+
         .bloco-imagem {
             padding: 30px 0;
             text-align: center;
@@ -203,32 +222,6 @@
             max-width: 100%;
             height: auto;
             display: block;
-        }
-
-        .bloco-imagem__placeholder {
-            background: linear-gradient(135deg, #e0e0e0 0%, #f5f5f5 100%);
-            border: 2px dashed #ccc;
-            border-radius: 12px;
-            padding: 60px 40px;
-            text-align: center;
-            color: #888;
-        }
-
-        .bloco-imagem__placeholder-icon {
-            font-size: 48px;
-            margin-bottom: 15px;
-            opacity: 0.5;
-        }
-
-        .bloco-imagem__placeholder-texto {
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .bloco-imagem__placeholder-instrucao {
-            font-size: 12px;
-            color: #aaa;
-            margin-top: 8px;
         }
 
         .bloco-preco {
@@ -387,71 +380,63 @@
             font-size: 16px;
         }
 
-        .bloco-cta__botoes {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .botao-sim {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--cor-botao-sim) 0%, #20c997 100%);
-            color: white;
-            font-family: var(--fonte-corpo);
-            font-size: 18px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 22px 50px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
-            width: 100%;
-            max-width: 400px;
-        }
-
-        .botao-sim:hover {
-            background: linear-gradient(135deg, var(--cor-botao-sim-hover) 0%, #1aa179 100%);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
-        }
-
-        .botao-sim:active {
-            transform: translateY(0);
-        }
-
-        .botao-nao {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--cor-botao-nao);
-            font-family: var(--fonte-corpo);
-            font-size: 13px;
-            font-weight: 500;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            opacity: 0.8;
-        }
-
-        .botao-nao:hover {
-            background-color: var(--cor-botao-nao);
-            color: white;
-            opacity: 1;
-        }
-
         .texto-centro {
             text-align: center;
         }
 
         .margem-topo {
             margin-top: 30px;
+        }
+
+        .comparacao {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .comparacao__item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .comparacao__item--destaque {
+            border: 2px solid var(--cor-botao-sim);
+            background: linear-gradient(135deg, #e8f5e9 0%, #fff 100%);
+        }
+
+        .comparacao__nome {
+            font-weight: 700;
+            color: var(--cor-texto);
+            margin-bottom: 10px;
+        }
+
+        .comparacao__resultado {
+            font-size: 14px;
+            color: var(--cor-texto-secundario);
+        }
+
+        .comparacao__resultado strong {
+            color: var(--cor-botao-sim);
+            font-size: 16px;
+        }
+
+        .comparacao__imagem {
+            margin-top: 15px;
+        }
+
+        .comparacao__imagem img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 600px) {
+            .comparacao {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
@@ -466,11 +451,6 @@
             .bloco-preco__valor {
                 font-size: 46px;
             }
-
-            .botao-sim {
-                font-size: 16px;
-                padding: 20px 30px;
-            }
         }
     </style>
 </head>
@@ -479,21 +459,21 @@
 
         <!-- INICIO ALERTA TOPO -->
         <div class="alerta-topo">
-            <p class="alerta-topo__etapa">ETAPA 1 de 2</p>
+            <p class="alerta-topo__etapa">STEP 1 of 2</p>
             <p class="alerta-topo__texto">
-                <strong>Atenção:</strong> não feche ou atualize essa página, isso pode gerar erros na sua compra.
+                <strong>Attention:</strong> do not close or refresh this page, as it may cause errors in your purchase.
             </p>
         </div>
         <!-- FIM ALERTA TOPO -->
 
         <!-- INICIO HEADLINE -->
         <header class="headline">
-            <span class="headline__parabens">Parabéns!</span>
+            <span class="headline__parabens">Congratulations!</span>
             <h1 class="headline__titulo">
-                Você conseguiu uma vaga no <span>"Nome do Produto"</span>
+                You secured your spot in the <span>Asian Bariatric Gelatin Protocol</span>
             </h1>
             <p class="headline__subtitulo">
-                Por favor não feche ou atualize esta página pois isso pode causar alguns erros na sua compra!
+                Please do not close or refresh this page as it may cause errors with your purchase!
             </p>
         </header>
         <!-- FIM HEADLINE -->
@@ -501,201 +481,193 @@
         <!-- INICIO BLOCO TEXTO - CONFIRMAÇÃO -->
         <section class="bloco-texto bloco-texto--borda">
             <p>
-                Você irá receber o acesso no seu e-mail, lembre-se de verificar a <strong>lixeira</strong> e a <strong>caixa de spam</strong>...
+                You will receive access in your email. Remember to check your <strong>spam</strong> and <strong>junk folders</strong>...
             </p>
             <p>
-                Caso tenha alguma dúvida, envie-nos um e-mail e responderemos dentro das primeiras 24 horas...
+                If you have any questions, send us an email and we will respond within the first 24 hours...
             </p>
             <p>
-                Se você está lendo essa mensagem, significa que <strong>você tomou a decisão certa</strong>...
+                If you're reading this message, it means <strong>you made the right decision</strong>...
             </p>
             <p>
-                Você comprou o <span class="produto">"Nome do Produto"</span> porque quer perder peso...
+                You purchased the <span class="produto">Asian Bariatric Gelatin Protocol</span> because you want to lose weight...
             </p>
             <p>
-                E é exatamente isso que ele fará por você...
+                And that's exactly what it will do for you...
             </p>
             <p>
-                Você vai aprender uma <strong>rotina matinal nada convencional</strong>, que vai queimar toda a gordura do seu corpo enquanto revitaliza sua energia e autoestima de forma super rápida...
+                You're going to learn the <strong>ancient Asian protocol</strong> that will burn all the fat from your body while reactivating your GLP-1 and GIP hormones super fast...
             </p>
             <div class="bloco-texto__enfase">
-                Quero ouvir o seu testemunho e quanto peso você perdeu, então tente aplicar exatamente o que está dentro do <span class="produto">"Nome do Produto"</span>...
+                I want to hear your testimonial and how much weight you lost, so try to apply exactly what's inside the <span class="produto">Asian Bariatric Gelatin Protocol</span>...
             </div>
             <p class="texto-centro">
-                Se funcionou para outras pessoas...<br>
-                <strong>Com certeza vai funcionar pra você também!</strong>
+                If it worked for Kelly Clarkson, Rebel Wilson, and other celebrities...<br>
+                <strong>It will definitely work for you too!</strong>
             </p>
         </section>
         <!-- FIM BLOCO TEXTO - CONFIRMAÇÃO -->
 
-        <!-- INICIO BLOCO TEXTO - PROBLEMA (FLACIDEZ) -->
+        <!-- INICIO BLOCO TEXTO - PROBLEMA -->
         <section class="bloco-texto bloco-texto--borda">
             <p>
-                Tudo depende da sua dedicação aqui, nesta página, eu gostaria de te oferecer algo de ainda mais valioso, vou te revelar uma coisa que você provavelmente já sabe...
+                Everything depends on your dedication. Here, on this page, I'd like to offer you something even more valuable. Let me reveal something you probably already know...
+            </p>
+            <div class="bloco-texto__enfase">
+                The Asian Bariatric Gelatin Protocol will help you lose 53-60 lbs in 90 days...
+            </div>
+            <p class="texto-centro">
+                That's incredible, right?
             </p>
             <div class="bloco-texto__alerta">
-                <p>Depois de perder peso, seu corpo ficará extremamente flácido…</p>
+                <p>But what if I told you that you could have the SAME results in HALF THE TIME?</p>
             </div>
-
-            <!-- IMAGEM 1 - Substitua o src pela sua imagem -->
-            <div class="bloco-imagem">
-                <div class="bloco-imagem__placeholder">
-                    <div class="bloco-imagem__placeholder-icon">🖼️</div>
-                    <p class="bloco-imagem__placeholder-texto">IMAGEM 1 - Exemplo de flacidez</p>
-                    <p class="bloco-imagem__placeholder-instrucao">Substitua por: imagens/sua-imagem.jpg</p>
-                </div>
-            </div>
-
-            <p>
-                A flacidez é normal após a perda de muitos quilos, pois a gordura do seu corpo estica a sua pele, e conforme você perde a gordura a sua pele começa a murchar e ficar com uma <span class="destaque">textura de casca de laranja horrível</span>...
-            </p>
-            <p>
-                Isso ocorre porque, ao retirar o excesso de gordura, as fibras elásticas que sustentam a pele perdem a capacidade de retração...
-            </p>
-
-            <!-- IMAGEM 2 - Substitua o src pela sua imagem -->
-            <div class="bloco-imagem">
-                <div class="bloco-imagem__placeholder">
-                    <div class="bloco-imagem__placeholder-icon">🖼️</div>
-                    <p class="bloco-imagem__placeholder-texto">IMAGEM 2 - Áreas afetadas pela flacidez</p>
-                    <p class="bloco-imagem__placeholder-instrucao">Substitua por: imagens/sua-imagem.jpg</p>
-                </div>
-            </div>
-
-            <p>
-                Todo o corpo pode sofrer com a flacidez após a perda de peso, mas algumas áreas são mais afetadas, principalmente os <strong>braços, coxas, nádegas, abdômen e o rosto</strong>, o que pode dar a algumas pessoas uma aparência envelhecida...
-            </p>
-            <p>
-                <span class="destaque">Infelizmente, isso acaba destruindo completamente a autoestima e a vontade de viver...</span>
-            </p>
-
-            <!-- IMAGEM 3 - Substitua o src pela sua imagem -->
-            <div class="bloco-imagem">
-                <div class="bloco-imagem__placeholder">
-                    <div class="bloco-imagem__placeholder-icon">🖼️</div>
-                    <p class="bloco-imagem__placeholder-texto">IMAGEM 3 - Impacto na autoestima</p>
-                    <p class="bloco-imagem__placeholder-instrucao">Substitua por: imagens/sua-imagem.jpg</p>
-                </div>
-            </div>
-
-            <p>
-                Percebi isso porque todos os nossos alunos acabaram tendo a mesma coisa e me enviaram e-mails contando essas histórias...
-            </p>
-            <p>
-                Depois de perder todos aqueles quilos de gordura usando o <span class="produto">"Nome do Produto"</span>, eles ainda tinham baixa autoestima devido à <strong>flacidez exagerada</strong> causada pela rápida perda de peso...
+            <p class="texto-centro">
+                What if instead of 90 days, you could achieve your <strong>dream body in just 45 days</strong>?
             </p>
         </section>
-        <!-- FIM BLOCO TEXTO - PROBLEMA (FLACIDEZ) -->
+        <!-- FIM BLOCO TEXTO - PROBLEMA -->
 
         <!-- INICIO BLOCO TEXTO - SOLUÇÃO -->
         <section class="bloco-texto bloco-texto--borda">
-            <p>
-                Embora a flacidez não seja considerada uma condição médica que precise ser tratada, muitas mulheres se sentem <strong>extremamente constrangidas</strong> com isso...
-            </p>
-            <p>
-                Muitos de nossos alunos queriam aumentar ainda mais seus resultados...
-            </p>
-            <p>
-                E além de perder peso de forma saudável e rápida, eles tentaram se preparar contra aquele pequeno problema que ocorre depois de perder vários quilos...
-            </p>
-            <p>
-                Por isso, surgiu a necessidade de um <strong>programa de bem-estar contra a flacidez</strong>...
-            </p>
-            <p>
-                Felizmente, depois de muito estudo, descobrimos uma <span class="destaque">solução simples que elimina a flacidez da pele</span>...
-            </p>
-            <p>
-                O melhor de tudo, é que você <strong>não precisa fazer tratamentos perigosos</strong> ou usar cremes caros que nem sempre têm o efeito desejado...
-            </p>
-            <h3 class="bloco-texto__subtitulo margem-topo">
-                O Método Contra a Flacidez
+            <h3 class="bloco-texto__subtitulo">
+                Let me introduce you to the Asian Metabolism Amplifier...
             </h3>
             <p>
-                Este programa irá ajudá-lo a <strong>eliminar totalmente a flacidez do seu corpo</strong>, pois ajudará após a perda de peso, dando-lhe a confiança para usar as roupas que deseja sem se preocupar com nada e ao mesmo tempo você perderá peso com o <span class="produto">"Nome do Produto"</span>...
+                This is a <strong>complementary protocol</strong> used by women in Okinawa when they NEED faster results (weddings, festivals, special events).
             </p>
             <p>
-                Você também vai conseguir uma <strong>pele sem aquela flacidez horrível</strong> com aparência de casca de laranja após a perda de peso...
+                It's 100% natural and works TOGETHER with the bariatric gelatin to:
             </p>
-            <div class="bloco-texto__enfase">
-                Já imaginou ter um corpo totalmente saudável? Poder usar qualquer tipo de roupa, principalmente as curtas, sem ter vergonha do próprio corpo...
-            </div>
+            <ul class="bloco-texto__lista">
+                <li>Double your fat-burning speed</li>
+                <li>Lose 15 lbs in the first 2 weeks (instead of 7-10 lbs)</li>
+                <li>Reach 50-60 lbs in 6 weeks (instead of 12 weeks)</li>
+                <li>Accelerate GLP-1 and GIP production by up to 2x</li>
+            </ul>
+            <p>
+                Here's what happens:
+            </p>
+            <p>
+                When you combine the traditional Asian gelatin protocol with the Metabolism Amplifier, your body enters what we call <span class="destaque">"hyperdrive fat-burning mode."</span>
+            </p>
             <p class="texto-centro">
-                Já imaginou ir à praia sob aquele sol escaldante e usando o melhor biquíni que você tem? <strong>Isso está mais perto do que você pensa...</strong>
+                <strong>It's like adding rocket fuel to an already powerful engine.</strong>
             </p>
 
-            <!-- IMAGEM 4 - Substitua o src pela sua imagem -->
-            <div class="bloco-imagem">
-                <div class="bloco-imagem__placeholder">
-                    <div class="bloco-imagem__placeholder-icon">🖼️</div>
-                    <p class="bloco-imagem__placeholder-texto">IMAGEM 4 - Exemplo do que você NÃO quer</p>
-                    <p class="bloco-imagem__placeholder-instrucao">Substitua por: imagens/sua-imagem.jpg</p>
-                </div>
-            </div>
-
-            <p>
-                <strong>Eu não quero que você fique assim depois de perder peso...</strong>
-            </p>
-            <p>
-                Quero que você fique linda e se sinta bem consigo mesma. Depois que nossos alunos usaram esse programa, conseguiram <span class="destaque">perder a flacidez em menos de 30 dias</span>. Isso foi algo que realmente nos surpreendeu...
-            </p>
-            <p>
-                Não esperávamos que nosso programa tivesse esse efeito porque, afinal, não se trata de usar cremes caros ou fazer tratamentos perigosos que têm mais efeitos colaterais do que benefícios...
-            </p>
-            <div class="bloco-texto__enfase">
-                É um método rápido, seguro e 100% natural...<br>
-                Ele não coloca sua pele ou saúde em risco.
-            </div>
+            <h3 class="bloco-texto__subtitulo margem-topo">
+                What's included in the Asian Metabolism Amplifier:
+            </h3>
+            <ul class="bloco-texto__lista">
+                <li><strong>Morning Metabolic Accelerator Tea</strong> (traditional Korean recipe used for centuries)</li>
+                <li><strong>Optimized Timing Protocol</strong> (when to take the gelatin for maximum absorption - this alone can increase effectiveness by 40%)</li>
+                <li><strong>7 GLP-1/GIP Turbocharger Foods</strong> (amplify hormone production naturally)</li>
+                <li><strong>Asian Breathing Technique</strong> (accelerates metabolism by 23% - scientifically proven)</li>
+                <li><strong>Intensive 45-Day Schedule</strong> (exact day-by-day roadmap)</li>
+                <li><strong>Metabolism Reset Routine</strong> (10 minutes in the morning, changes everything)</li>
+            </ul>
         </section>
         <!-- FIM BLOCO TEXTO - SOLUÇÃO -->
+
+        <!-- INICIO BLOCO BÔNUS -->
+        <div class="bloco-bonus">
+            <span class="bloco-bonus__badge">Exclusive Bonus</span>
+            <h3 class="bloco-bonus__titulo">Emergency 3-Day Flush</h3>
+            <p class="bloco-bonus__valor">
+                Worth: <span>$197</span>
+            </p>
+            <p class="bloco-bonus__gratis">FREE if you act now!</p>
+            <p class="bloco-bonus__descricao">
+                Eliminate 5-7 lbs of water retention in 72 hours. Perfect for when you have an important event coming up and need to look your absolute best FAST.
+            </p>
+        </div>
+        <!-- FIM BLOCO BÔNUS -->
+
+        <!-- INICIO BLOCO COMPARAÇÃO -->
+        <section class="bloco-texto">
+            <h3 class="bloco-texto__subtitulo texto-centro">
+                Here's the thing:
+            </h3>
+            <div class="comparacao">
+                <div class="comparacao__item">
+                    <p class="comparacao__nome">Sarah</p>
+                    <p class="comparacao__resultado">
+                        Only Asian Bariatric Gelatin Protocol<br>
+                        <strong>55 lbs in 90 days</strong>
+                    </p>
+                    <!-- imagem1 -->
+                    <div class="comparacao__imagem">
+                        <img src="imagens/Imagem_1_-_Upsell_1.png" alt="Sarah - Results">
+                    </div>
+                </div>
+                <div class="comparacao__item comparacao__item--destaque">
+                    <p class="comparacao__nome">Jennifer</p>
+                    <p class="comparacao__resultado">
+                        Protocol + Metabolism Amplifier<br>
+                        <strong>58 lbs in just 45 days!</strong>
+                    </p>
+                    <!-- imagem2 -->
+                    <div class="comparacao__imagem">
+                        <img src="imagens/Imagem_2_-_Upsell_1.png" alt="Jennifer - Results">
+                    </div>
+                </div>
+            </div>
+            <p class="texto-centro">
+                Same starting weight. Same dedication. <strong>The only difference? The Amplifier.</strong>
+            </p>
+            
+            <!-- imagem3 -->
+            <div class="bloco-imagem">
+                <div class="bloco-imagem__container">
+                    <img src="imagens/Imagem_3_-_Upsell_1.png" alt="Comparison Results" class="bloco-imagem__img">
+                </div>
+            </div>
+        </section>
+        <!-- FIM BLOCO COMPARAÇÃO -->
 
         <!-- INICIO BLOCO PREÇO -->
         <section class="bloco-preco">
             <p class="bloco-preco__de">
-                Mesmo este programa valendo mais de <span>R$ 497,00</span>
+                Normally I charge <span>$497</span> for this advanced protocol
             </p>
-            <p class="bloco-preco__de">
-                Você não vai pagar nem <span>R$ 297,00</span>
-            </p>
-            <p class="bloco-preco__por">Somente nesta página, por apenas:</p>
+            <p class="bloco-preco__por">Today, only on this page:</p>
             <p class="bloco-preco__valor">
-                <small>R$</small> 197<small>,00</small>
+                <small>$</small>17
             </p>
             <p class="bloco-preco__aviso">
-                Isso só é válido AGORA. Depois, o preço volta para R$ 497,00
+                That's a 96% discount... but ONLY if you act now!
             </p>
         </section>
         <!-- FIM BLOCO PREÇO -->
 
         <!-- INICIO BLOCO TEXTO - URGÊNCIA -->
         <section class="bloco-texto">
-            <p>
-                E eu sei que você acha que talvez não precise disso agora, mas no futuro eu <strong>garanto que você vai</strong>...
+            <p class="texto-centro">
+                <strong>Think about it:</strong>
             </p>
-            <p>
-                Quando sua pele estiver extremamente flácida com um aspecto de maracujá, sentindo vergonha do seu corpo magro mas totalmente flácido você irá se arrepender de não ter aproveitado essa oportunidade de comprar por <strong>R$ 197,00</strong> e só vai conseguir por mais de R$ 497,00 se conseguir encontrar na internet...
+            <p class="texto-centro">
+                Would you rather wait 90 days for your dream body... or have it in <strong>45 days</strong>?
             </p>
+            <p class="texto-centro">
+                Would you rather lose 7 lbs in the first 2 weeks... or <strong>15 lbs</strong>?
+            </p>
+            <p class="texto-centro">
+                Would you rather take the slow road... or the <strong>express lane</strong>?
+            </p>
+            <p class="texto-centro margem-topo">
+                The choice is yours.
+            </p>
+            <div class="bloco-texto__alerta">
+                <p>But remember: every day you wait is another day away from your dream body.</p>
+            </div>
         </section>
         <!-- FIM BLOCO TEXTO - URGÊNCIA -->
-
-        <!-- INICIO BLOCO BÔNUS -->
-        <div class="bloco-bonus">
-            <span class="bloco-bonus__badge">Bônus Exclusivo</span>
-            <h3 class="bloco-bonus__titulo">Adeus Celulite em 21 Dias</h3>
-            <p class="bloco-bonus__valor">
-                Valor normal: <span>R$ 297,00</span>
-            </p>
-            <p class="bloco-bonus__gratis">GRÁTIS se você agir agora!</p>
-            <p class="bloco-bonus__descricao">
-                Com certeza você deve ter alguma celulite no bumbum, na barriga e nas coxas e isso te incomoda... Felizmente, este programa adicional resolverá esse problema!
-            </p>
-        </div>
-        <!-- FIM BLOCO BÔNUS -->
 
         <!-- INICIO BLOCO GARANTIA -->
         <div class="bloco-garantia">
             <div class="bloco-garantia__icone">🛡️</div>
             <div class="bloco-garantia__texto">
-                <strong>Garantia incondicional de 30 dias:</strong> Se você não gostar deste programa, sugiro até que peça um reembolso porque eu não mereço seu dinheiro. Estou fazendo isso porque estou comprometido com sua transformação, então não me importo de correr todos os riscos.
+                <strong>30-Day Money Back Guarantee:</strong> If you don't love this program, just ask for a refund. I'm committed to your transformation, so I don't mind taking all the risk.
             </div>
         </div>
         <!-- FIM BLOCO GARANTIA -->
@@ -703,36 +675,35 @@
         <!-- INICIO BLOCO TEXTO - ESCASSEZ FINAL -->
         <section class="bloco-texto">
             <div class="bloco-texto__alerta">
-                <p>Assim que você sair desta página, esta oportunidade se foi para sempre...</p>
+                <p>If you close this page, this opportunity is gone forever...</p>
             </div>
             <p class="texto-centro">
-                Você não encontrará este material em nenhum outro lugar com esta oportunidade, isso só está disponível para mulheres que mostram que são <strong>realmente determinadas</strong>...
+                You won't find this material anywhere else with this opportunity. This is only available to women who show they are <strong>truly determined</strong>...
             </p>
             <p class="texto-centro">
-                Veja bem, você já tem acesso ao <span class="produto">"Nome do Produto"</span> e depois de perder peso, infelizmente sua pele vai cair horrivelmente, o que é algo que eu definitivamente sei que <strong>não é algo que você deseja</strong>...
+                Look, you already have access to the <span class="produto">Asian Bariatric Gelatin Protocol</span>, and you WILL lose weight with it in 90 days...
+            </p>
+            <p class="texto-centro">
+                <strong>But why wait 90 days when you could have your dream body in 45 days?</strong>
             </p>
         </section>
         <!-- FIM BLOCO TEXTO - ESCASSEZ FINAL -->
 
         <!-- INICIO BLOCO CTA (CALL TO ACTION) -->
         <section class="bloco-cta">
-            <h2 class="bloco-cta__titulo">Clique no botão abaixo e comece agora mesmo!</h2>
+            <h2 class="bloco-cta__titulo">Don't you want results TWICE AS FAST?</h2>
             <p class="bloco-cta__subtitulo">
-                Aguardo o outro lado e espero ouvir o seu testemunho…
+                I'm waiting on the other side and hope to hear your testimonial soon!
             </p>
-            <div class="bloco-cta__botoes">
-
-                <!-- BOTÃO VERDE - Substitua # pelo link do checkout -->
-                <a href="https://www.globo.com" class="botao-sim">
-                    Sim, Adicionar ao Pacote!
-                </a>
-
-                <!-- BOTÃO VERMELHO - Substitua # pelo link da próxima página -->
-                <a href="https://www.google.com.br" class="botao-nao">
-                    Não, ignorar benefícios…
-                </a>
-
+            
+            <!-- INICIO BOTÕES KIWIFY -->
+            <div style="text-align:center" id="kiwify-upsell-fUXGkjC" data-upsell-url="https://elderyhealth.com/up2" data-downsell-url="https://elderyhealth.com/dow1">
+                <button id="kiwify-upsell-trigger-fUXGkjC" style="background-color:#27AF60;padding:12px 16px;cursor:pointer;color:#FFFFFF;font-weight:600;border-radius:4px;border:1px solid #27AF60;font-size:20px;">Yes, Add to my package!</button>
+                <div id="kiwify-upsell-cancel-trigger-fUXGkjC" style="margin-top:1rem;cursor:pointer;font-size:16px;text-decoration:underline;font-family:sans-serif;">No, I'll take the slower path...</div>
             </div>
+            <script src="https://snippets.kiwify.com/upsell/upsell.min.js"></script>
+            <!-- FIM BOTÕES KIWIFY -->
+
         </section>
         <!-- FIM BLOCO CTA (CALL TO ACTION) -->
 
