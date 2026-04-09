@@ -37,7 +37,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const DELAY_SEGUNDOS = calcularDelayEmSegundos(CONFIG.tempoDeDelay);
     var jaApareceu = false;
-
+// DIAGNÓSTICO TEMPORÁRIO - remova após confirmar que funciona
+window.addEventListener("message", function(event) {
+    console.log("MENSAGEM RECEBIDA:", event.data);
+});
     function mostrarOferta() {
         if (jaApareceu) return;
         jaApareceu = true;
