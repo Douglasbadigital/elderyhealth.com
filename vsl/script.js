@@ -5,7 +5,7 @@
 const CONFIG = {
     // ⏱️ Tempo de Delay: Formato "Minutos:Segundos"
     // Exemplo: "48:55", "12:00" ou "00:15"
-    tempoDeDelay: "00:15",
+    tempoDeDelay: "00:30",
 
    // 🔗 Links de Checkout dos Botões (Men Balance Pro)
 linkPote2: "https://travozilla.com/b?p=MBP2V1&nc=1&preview=1&b=123&fid=268&fnid=72&pfnid=1&pg=9207&template=2b&aff_id=119995&subid={subid}",
