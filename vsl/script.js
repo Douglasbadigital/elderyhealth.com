@@ -37,7 +37,21 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const DELAY_SEGUNDOS = calcularDelayEmSegundos(CONFIG.tempoDeDelay);
     var jaApareceu = false;
-
+// DIAGNÓSTICO - remover após identificar o problema
+window.addEventListener("load", function() {
+    var tentativas = 0;
+    var diag = setInterval(function() {
+        tentativas++;
+        var player = document.getElementById("vid-69d713ad397625cd1e9ad0a8");
+        console.log("Tentativa " + tentativas + " - player encontrado:", player);
+        console.log("Tipo do player:", typeof player);
+        if (player) {
+            console.log("currentTime:", player.currentTime);
+            console.log("Métodos disponíveis:", Object.getOwnPropertyNames(player));
+        }
+        if (tentativas > 10) clearInterval(diag);
+    }, 2000);
+});
     function mostrarOferta() {
         if (jaApareceu) return;
         jaApareceu = true;
