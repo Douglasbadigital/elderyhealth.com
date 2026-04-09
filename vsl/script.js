@@ -7,10 +7,10 @@ const CONFIG = {
     // Exemplo: "48:55", "12:00" ou "00:15"
     tempoDeDelay: "00:15",
 
-    // 🔗 Links de Checkout dos Botões (Men Balance Pro)
-    linkPote2: "/b?p=MBP2V1&nc=1&preview=1&b=123&pg=9382&template=2b",
-    linkPote6: "/b?p=MBP6V1&nc=1&preview=1&b=123&pg=9382&template=6b",
-    linkPote3: "/b?p=MBP3V1&nc=1&preview=1&b=123&pg=9382&template=3b"
+   // 🔗 Links de Checkout dos Botões (Men Balance Pro)
+linkPote2: "https://travozilla.com/b?p=MBP2V1&nc=1&preview=1&b=123&fid=268&fnid=72&pfnid=1&pg=9207&template=2b&aff_id=119995&subid={subid}",
+linkPote6: "https://travozilla.com/b?p=MBP6V1&nc=1&preview=1&b=123&fid=268&fnid=72&pfnid=1&pg=9207&template=6b&aff_id=119995&subid={subid}",
+linkPote3: "https://travozilla.com/b?p=MBP3V1&nc=1&preview=1&b=123&fid=268&fnid=72&pfnid=1&pg=9207&template=3b&aff_id=119995&subid={subid}"
 };
 
 // =====================================================================
