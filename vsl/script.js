@@ -7,7 +7,7 @@ const CONFIG = {
     // Esse tempo é sincronizado com o vídeo VTurb (não com o tempo de página)
     // Exemplo: "34:00" = aparece aos 34 minutos do vídeo
     // Para testes use valores baixos como "00:10"
-    tempoDeDelay: "34:00",
+    tempoDeDelay: "00:10",
 
     // 🔗 Links de Checkout dos Botões (Men Balance Pro)
     linkPote2: "https://travozilla.com/b?p=MBP2V1&nc=1&preview=1&b=123&fid=268&fnid=72&pfnid=1&pg=9207&template=2b&aff_id=119995&subid={subid}",
