@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Important Health Update</title>
 
+    <!-- cole aqui o código do Pixel Meta -->
+
+    <!-- cole aqui o script de carregamento rápido do VTurb -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=Poppins:regular@100,200,300,500,600,700,800,900&display=swap" rel="stylesheet">
@@ -12,6 +16,87 @@
     <link href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =============================================
+           SEÇÃO DE OFERTA: escondida por padrão
+           Aparece apenas no tempo definido no delay
+        ============================================= */
+        .video-cta-container {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        /* =============================================
+           RESPONSIVIDADE: mobile, tablet e desktop
+        ============================================= */
+
+        /* DESKTOP (acima de 1024px): layout padrão em 3 colunas */
+        @media (min-width: 1024px) {
+            .pricing-grid {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                gap: 20px;
+            }
+        }
+
+        /* TABLET (entre 768px e 1023px) */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .pricing-grid {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 16px;
+            }
+        }
+
+        /* MOBILE (abaixo de 768px): coluna única, 6 potes primeiro */
+        @media (max-width: 767px) {
+            .pricing-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 16px;
+                width: 100%;
+                padding: 0 16px;
+                box-sizing: border-box;
+            }
+
+            .pricing-grid .card {
+                width: 100%;
+                max-width: 360px;
+                box-sizing: border-box;
+            }
+
+            /* Reordenação: 6 potes aparece primeiro no mobile */
+            #card-6-bottles { order: 1; }
+            #card-2-bottles { order: 2; }
+            #card-3-bottles { order: 3; }
+
+            .container {
+                padding: 0 12px;
+                box-sizing: border-box;
+            }
+
+            .offer-headline {
+                font-size: 22px;
+                text-align: center;
+                padding: 0 8px;
+            }
+
+            .guarantee-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .badges-wrapper {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -19,7 +104,14 @@
 
         <!-- VSL -->
         <!-- TODO: insira aqui o embed do VTurb do Men Balance Pro -->
-        <div class="vsl-placeholder">Your VSL here</div>
+        <!-- cole aqui o embed da VSL -->
+        <vturb-smartplayer id="vid-69cdcb5635905256b4399732" style="display: block; margin: 0 auto; width: 100%; max-width: 400px;"></vturb-smartplayer>
+        <script type="text/javascript">
+            var s = document.createElement("script");
+            s.src = "https://scripts.converteai.net/fcb32364-a211-41ee-864d-55dbf6fcd6f5/players/69cdcb5635905256b4399732/v4/player.js";
+            s.async = !0;
+            document.head.appendChild(s);
+        </script>
 
         <div id="counterContainer">
             <div id="counterWrapper">
@@ -33,12 +125,16 @@
             </div>
         </div>
 
+        <!-- =============================================
+             SEÇÃO DE OFERTA
+             Fica oculta até o delay do vídeo ser atingido
+        ============================================= -->
         <div class="video-cta-container">
             <h1 class="offer-headline">Claim Your Discounted <b>Men Balance Pro</b> Below</h1>
 
             <div class="pricing-grid">
 
-                <a href="#" class="card" id="card-2-bottles">
+                <a href="https://travozilla.com/b?p=MBP2V1&nc=1&preview=1&b=123&fid=268&fnid=72&pfnid=1&pg=9207&template=2b&aff_id=119995&subid={subid}" class="card" id="card-2-bottles">
                     <div class="card-title">2 BOTTLES • 60 DAYS</div>
                     <div class="card-image"><img src="https://cdn.elasticfunnels.io/123/assets/products/MPB02.png" alt="2 Bottles"></div>
                     <div class="card-price-row">
@@ -51,7 +147,7 @@
                     <div class="total-block">Total: $158</div>
                 </a>
 
-                <a href="#" class="card best-value" id="card-6-bottles">
+                <a href="https://travozilla.com/b?p=MBP6V1&nc=1&preview=1&b=123&fid=268&fnid=72&pfnid=1&pg=9207&template=6b&aff_id=119995&subid={subid}" class="card best-value" id="card-6-bottles">
                     <div class="card-header">MOST POPULAR</div>
                     <div class="card-title">6 BOTTLES • 180 DAYS</div>
                     <div class="card-image"><img src="https://cdn.elasticfunnels.io/123/assets/media/MBP_SPLASH_6_BOTTLES.png" alt="6 Bottles"></div>
@@ -69,7 +165,7 @@
                     <div class="total-block">Total: <span class="strike-price">$1074</span> $294</div>
                 </a>
 
-                <a href="#" class="card" id="card-3-bottles">
+                <a href="https://travozilla.com/b?p=MBP3V1&nc=1&preview=1&b=123&fid=268&fnid=72&pfnid=1&pg=9207&template=3b&aff_id=119995&subid={subid}" class="card" id="card-3-bottles">
                     <div class="card-title">3 BOTTLES • 90 DAYS</div>
                     <div class="card-image"><img src="https://cdn.elasticfunnels.io/123/assets/products/MPB03.png" alt="3 Bottles"></div>
                     <div class="card-price-row">
@@ -107,6 +203,8 @@
             </div>
 
         </div>
+        <!-- FIM DA SEÇÃO DE OFERTA -->
+
     </div>
 
     <div id="purchase-notification" class="notification-popup">
@@ -121,6 +219,7 @@
         </div>
     </div>
 
+    <!-- UTMs Utmify -->
     <script
       src="https://cdn.utmify.com.br/scripts/utms/latest.js"
       data-utmify-prevent-xcod-sck
@@ -129,5 +228,49 @@
     ></script>
 
     <script src="script.js"></script>
+
+    <!-- =============================================
+         DELAY SINCRONIZADO COM O VÍDEO VTURB
+         A seção de oferta aparece após X segundos
+         de vídeo assistido (não de página aberta)
+    ============================================= -->
+    <script type="text/javascript">
+
+        // ⏱️ Defina aqui o tempo em segundos para a seção aparecer
+        // Exemplos: 60 = 1 min | 300 = 5 min | 600 = 10 min
+        var DELAY_SEGUNDOS = 300; // cole aqui o tempo em segundos
+
+        var jaApareceu = false;
+
+        window.addEventListener("message", function(event) {
+            // Escuta os eventos de progresso do player VTurb
+            if (event.data && event.data.type === "smartplayer:timeupdate") {
+                var tempoAtual = event.data.currentTime;
+
+                if (tempoAtual >= DELAY_SEGUNDOS && !jaApareceu) {
+                    jaApareceu = true;
+
+                    // Exibe a seção de oferta com fade in
+                    var secao = document.querySelector(".video-cta-container");
+                    if (secao) {
+                        secao.style.display = "block";
+                        setTimeout(function() {
+                            secao.style.opacity = "1";
+                        }, 100);
+                    }
+
+                    // 2 segundos após aparecer, desliza suavemente até o card de 6 potes
+                    setTimeout(function() {
+                        var card6 = document.getElementById("card-6-bottles");
+                        if (card6) {
+                            card6.scrollIntoView({ behavior: "smooth", block: "start" });
+                        }
+                    }, 2000); // 2000ms = 2 segundos após o fade in
+                }
+            }
+        });
+
+    </script>
+
 </body>
 </html>
