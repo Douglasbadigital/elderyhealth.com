@@ -61,12 +61,14 @@ document.addEventListener("DOMContentLoaded", function() {
     }, tempoPreload);
 
 
-    // 4. REVELAR SEÇÃO NO TEMPO DO DELAY
-    setTimeout(() => {
+    // 4. FUNÇÃO DE REVELAR SEÇÃO
+    function revelarSecao() {
+        // Salva flag na sessão para revelar imediatamente se prospect retornar
+        sessionStorage.setItem('ofertaRevelada', '1');
 
         // A. Revela a seção com os botões e garantia
         const secao = document.querySelector('.video-cta-container');
-        secao.style.display = 'block';
+        if (secao) secao.style.display = 'block';
 
         // B. Cards dos potes aparecem imediatamente
         const grid = document.querySelector('.pricing-grid');
@@ -85,11 +87,29 @@ document.addEventListener("DOMContentLoaded", function() {
         setTimeout(() => {
             startAllNotifications();
         }, 10000);
+    }
 
-    }, delayTotal);
+    // 5. VERIFICA SE PROSPECT JÁ VIU A OFERTA (retorno ao site)
+    if (sessionStorage.getItem('ofertaRevelada') === '1') {
+        // Já assistiu: revela imediatamente sem delay
+        revelarSecao();
+    } else {
+        // Primeira visita: aguarda o delay normal
+        setTimeout(() => {
+            revelarSecao();
+        }, delayTotal);
+    }
+
+    // 6. CORREÇÃO MOBILE (bfcache): pageshow dispara quando o navegador
+    // restaura a página do cache ao pressionar "voltar" no iOS/Android
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted && sessionStorage.getItem('ofertaRevelada') === '1') {
+            revelarSecao();
+        }
+    });
 
 
-    // 5. SISTEMA DO CONTADOR DE PESSOAS ASSISTINDO (Roda desde o início)
+    // 7. SISTEMA DO CONTADOR DE PESSOAS ASSISTINDO (Roda desde o início)
     function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min + 1) + min); }
     function updateCounter() {
         var currentCount = parseInt(document.getElementById('viewsCount').textContent.replace(/,/g, ''), 10);
@@ -103,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function() {
     updateCounter();
 
 
-    // 6. SISTEMA DE NOTIFICAÇÕES FALSAS DE COMPRA (POP-UPS)
+    // 8. SISTEMA DE NOTIFICAÇÕES FALSAS DE COMPRA (POP-UPS)
     const customerNames = ["Harper", "Noah", "Oliver", "Elijah", "William", "James", "Benjamin", "Lucas", "Henry", "Alexander", "Matt", "Paul",];
     const states = [
         {"name": "Alabama", "abbreviation": "al"}, {"name": "Alaska", "abbreviation": "ak"}, {"name": "Arizona", "abbreviation": "az"}, {"name": "Arkansas", "abbreviation": "ar"}, {"name": "California", "abbreviation": "ca"}, {"name": "Colorado", "abbreviation": "co"}, {"name": "Florida", "abbreviation": "fl"}, {"name": "Georgia", "abbreviation": "ga"}, {"name": "Hawaii", "abbreviation": "hi"}, {"name": "Illinois", "abbreviation": "il"}, {"name": "Texas", "abbreviation": "tx"}, {"name": "New York", "abbreviation": "ny"}
